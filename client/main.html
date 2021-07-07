@@ -5,15 +5,19 @@
 
 <body>
   <div class="container">
-    <h1>Welcome to Meteor!</h1>
-    <ul class="collection">
-      {{#each notes }}
-      {{> note}}
-      {{/each}}
+    <header>
+        <h1>Notes</h1>
+    </header>
+
+    <ul class="collection" >
+        {{#each notes}}
+            {{> note}}
+        {{/each}}
     </ul>
-  </div>
+</div>
 </body>
 
+
 <template name="note">
-  <li class="collection-item">My Note</li>
+  <li class="collection-item">{{text}}</li>
 </template>
