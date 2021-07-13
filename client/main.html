@@ -1,5 +1,6 @@
 <head>
   <title>notemanager</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -42,7 +43,10 @@
 
 
 <template name="note">
-  <li class="collection-item">{{text}}</li>
+  <li class="collection-item">
+    {{text}}
+    <a href="#" class="delete-note secondary-content" > <i class="material-icons">close</i> </a>
+  </li>
 </template>
 
 <!-- Modal Body -->
@@ -54,6 +58,6 @@
         <input type="text" name="text" placeholder="add note">
       </form>
     </div>
-  
+
   </div>
 </template>
