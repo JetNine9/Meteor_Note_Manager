@@ -9,3 +9,23 @@ Template.body.helpers({
         return Notes.find({})
     }
 })
+
+
+Template.add.events({
+    'submit .add-form': function(){
+        event.preventDefault();
+
+        const target = event.target
+        const text = target.text.value 
+
+        // Insert Note to collection mongodb 
+        Notes.insert({
+            text: text, 
+            createdAt: new Date()
+        })
+
+        target.text.value = ""
+        $("addModal").modal("close");
+        return false
+    }
+})
